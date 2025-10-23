@@ -1,129 +1,165 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-  <!-- Metadata about the page: title, font, reference to stylesheet -->
-  <meta charset="utf-8">
-  <link rel="icon" type="image/x-icon" href="./Logo+Option+1..png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About the CIT - GRIT Conference</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<!--by Anooshka Pendyal-->
-
-<!-- body for the About CIT page -->
-
-<body id="aboutcitbody">
-
-  <!--Navigation bar-->
-  <!-- The navigation bar consists of a list that consists of different pages that the user can go to when the specific text is clicked. -->
-  <ul class="nav">
-    <li class="nav_image"><a href="./index.html"><img src="./Logo+Option+1..png" alt="GRIT Conference Logo" class="logo"></a></li>
-    <li class="nav_item"><a href="./index.html">Home</a></li>
-    <li class="nav_item"><a href="./citpage.html">About CIT</a></li>
-
-    <!-- dropdown for interviews -->
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Interviews</a>
-      <div class="dropdown-content">
-        <a href="./Interviews_Guest.html">Guest Interviews</a>
-        <a href="./Interviews_Students.html">Student Interviews</a>
-      </div>
-    </li>
-            <!-- Volunteer/donate -->
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">volunteer</a>
-        <div class="dropdown-content">
-          <a href="./volunteer.html">volunteer</a>
-          <a href="./volunteer.html">donate</a>
-        </div>
-      </li>
-
-    <!-- dropdown for Media -->
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Media</a>
-      <div class="dropdown-content">
-        <a href="./iPhotos.html">Photos</a>
-        <a href="./iVideos.html">Videos</a>
-      </div>
-    </li>
-
-    <!-- dropdown for featured guests -->
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Featured</a>
-      <div class="dropdown-content">
-        <a href="./featuredcolleges.html">Colleges</a>
-        <a href="./featuredspeakers.html">Speakers</a>
-        <a href="./featuredsponsor.html">Sponsors</a>
-      </div>
-    </li>
-
-    <!-- dropdown for registration: direct links to forms -->
-    <!-- <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Registration</a>
-      <div class="dropdown-content">
-        <a href="https://forms.gle/qLJaKHhzVPaXjfhRA" target="_blank">College Registration</a>
-        <a href="https://forms.gle/uxxty1npJLrFctLJ9" target="_blank">Student Registration</a>
-        <a href="https://forms.gle/RBKTe2yucbAcHcZn7" target="_blank">Volunteer Registration</a>
-        <a href="https://forms.gle/UnEQ94Ep12wDHKYr8" target="_blank">Speakers, Sponsors, Vendors Registration</a>
-      </div>
-    </li> -->
-
-    <li class="nav_item"><a href="iContactUs.html">Contact Us</a></li>
-
-    <li class="nav_image"><a href="https://informationtechnology.henricoschools.us/" target="_blank"><img
-          src="./citlogo.png" alt="CIT Logo" class="CITlogo"></a></li>
-  </ul>
-
-  <section class="featuredhead">
-    <h3 id="FSpeaktitle">Contact Us</h3>
-    <!--<h1 class="comingsoon">Coming Soon!</h1>-->
-  </section>
-  
-  <br>
-  <br>
-  <br>
-  <br>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact – GRIT Conference</title>
+  <link rel="icon" type="image/png" href="./Logo+Option+1..png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-      .center {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 50vh; /* Adjust as needed */
-      }
+    :root{
+      --bg:#0b1020;--panel:#121a33;--panel-2:#0f1630;--text:#eaf0ff;--muted:#c3cbea;
+      --primary:#5aa7ff;--primary-2:#3f8bff;--accent:#7bffc0;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);
+      background:radial-gradient(1200px 600px at 80% -10%, rgba(90,167,255,.12), transparent),
+                 radial-gradient(1200px 600px at -10% 10%, rgba(123,255,192,.08), transparent),
+                 var(--bg);
+      line-height:1.6
+    }
+    a{color:var(--primary);text-decoration:none}
+    a:hover{color:var(--primary-2)}
+    img{max-width:100%;height:auto;display:block}
+    .container{width:min(1100px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:40;background:rgba(11,16,32,.7);backdrop-filter:blur(10px);
+      box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.2)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-weight:500;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover,.nav-links a:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .dropdown{position:relative}
+    .dropdown>button{background:transparent;border:0;color:var(--muted);font:inherit;cursor:pointer;
+      padding:8px 10px;border-radius:10px;display:inline-flex;align-items:center;gap:6px}
+    .dropdown>button:hover,.dropdown>button:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .menu{position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:var(--panel);
+      border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px;box-shadow:var(--shadow);display:none}
+    .menu a{display:block;padding:10px 12px;border-radius:8px;color:var(--muted)}
+    .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .dropdown:focus-within .menu,.dropdown:hover .menu{display:block}
+
+    .hero{padding:48px 0 20px;border-bottom:1px solid rgba(255,255,255,.08);
+      background:radial-gradient(800px 300px at 20% 0%, rgba(90,167,255,.10), transparent)}
+    .hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 10px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .section{padding:28px 0}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);
+      padding:18px;box-shadow:var(--shadow)}
+    .card h2{margin:0 0 6px;color:var(--accent);font-size:1.1rem}
+    .muted{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;
+      border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;color:var(--text);
+      font-weight:600;cursor:pointer}
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .stack{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+
+    .map{background:var(--panel-2);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;
+      box-shadow:var(--shadow);margin-top:18px}
+    .map iframe{border:0;border-radius:8px;width:100%;height:280px}
+
+    footer{margin-top:40px;padding:28px 0 44px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);text-align:center}
   </style>
-  <p id="centertext">Office Phone Number: 804-364-8000</p>
-  <br>
-  <br>
-  <p id="centertext">Ms. Norris: lmnorris@henrico.k12.va.us</p>
-  <br>
-  <br>
-  <p id="centertext">Deep Run High School Address: 4801 Twin Hickory Road Glen Allen, Virginia 23059</p>
- 
-  
-  <br>
-  <br>
-  <br>
-  <br>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">GRIT Conference</div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./citpage.html">About CIT</a>
+        <div class="dropdown">
+          <button>Interviews ▾</button>
+          <div class="menu">
+            <a href="./Interviews_Guest.html">Guest Interviews</a>
+            <a href="./Interviews_Students.html">Student Interviews</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>Get Involved ▾</button>
+          <div class="menu">
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./donate.html">Donate</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>Media ▾</button>
+          <div class="menu">
+            <a href="./iPhotos.html">Photos</a>
+            <a href="./iVideos.html">Videos</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>Featured ▾</button>
+          <div class="menu">
+            <a href="./featuredcolleges.html">Colleges</a>
+            <a href="./featuredspeakers.html">Speakers</a>
+            <a href="./featuredsponsor.html">Sponsors</a>
+          </div>
+        </div>
+        <a href="./iContactUs.html">Contact</a>
+        <a href="https://informationtechnology.henricoschools.us/" target="_blank">CIT</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Footer -->
-    <footer class=footer>
-      <a href="https://informationtechnology.henricoschools.us/" id="citweb" target="_blank">CIT Website</a> ||
-      <a href="https://deeprun.henricoschools.us/" id="deepweb" target="_blank">Deep Run's Website</a>
-      <p>4801 Twin Hickory Road Glen Allen, Virginia 23059</p>
-      <!-- the coolest people in the world -->
-      <p> Authors: Kera P., Anooshka P., Grace L., Yomna A.</p>
-      <br>
-    </footer>
+  <section class="hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Reach the CIT team at Deep Run High School.</p>
+    </div>
+  </section>
 
-  </body>
+  <main>
+    <section class="section">
+      <div class="container grid grid-3">
+        <div class="card">
+          <h2>Office Phone</h2>
+          <div class="muted">804-364-8000</div>
+          <div class="stack">
+            <a class="btn" href="tel:8043648000">Call</a>
+          </div>
+        </div>
 
+        <div class="card">
+          <h2>Program Contact</h2>
+          <div class="muted">Ms. Norris · lmnorris@henrico.k12.va.us</div>
+          <div class="stack">
+            <a class="btn" href="mailto:lmnorris@henrico.k12.va.us">Email Ms. Norris</a>
+          </div>
+        </div>
 
+        <div class="card">
+          <h2>Address</h2>
+          <div class="muted">Deep Run High School<br/>4801 Twin Hickory Road<br/>Glen Allen, Virginia 23059</div>
+          <div class="stack">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=4801+Twin+Hickory+Road+Glen+Allen+Virginia+23059">Directions</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container map">
+        <iframe
+          src="https://www.google.com/maps?q=4801+Twin+Hickory+Road+Glen+Allen+Virginia+23059&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Map to Deep Run High School">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> GRIT Conference · Authors: Kera P., Anooshka P., Grace L., Yomna A.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
-
-
