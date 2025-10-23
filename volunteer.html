@@ -2,303 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Volunteer – GRIT Conference · About CIT</title>
-  <link rel="icon" type="image/png" href="./Logo+Option+1..png" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Page styles (scoped) -->
-  <style>
-    :root {
-      --bg: #0b1020;
-      --panel: #121a33;
-      --panel-2: #0f1630;
-      --text: #eaf0ff;
-      --muted: #c3cbea;
-      --primary: #5aa7ff;
-      --primary-2: #3f8bff;
-      --accent: #7bffc0;
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --radius: 16px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(90,167,255,.12), transparent),
-                  radial-gradient(1200px 600px at -10% 10%, rgba(123,255,192,.08), transparent),
-                  var(--bg);
-      line-height: 1.6;
-    }
-
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { color: var(--primary-2); }
-    img { max-width: 100%; display: block; }
-
-    .container { width: min(1100px, 92vw); margin: 0 auto; }
-
-    /* ====== Nav ====== */
-    header {
-      position: sticky; top: 0; z-index: 40;
-      background: rgba(11,16,32,0.7);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 10px 30px rgba(0,0,0,0.2);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
-    .nav-left { display: flex; align-items: center; gap: 14px; }
-    .logo { width: 40px; height: 40px; border-radius: 8px; }
-    .brand { font-weight: 700; letter-spacing: .3px; }
-
-    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); font-weight: 500; padding: 8px 10px; border-radius: 10px; }
-    .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,0.06); color: var(--text); outline: none; }
-
-    /* Simple dropdown */
-    .dropdown { position: relative; }
-    .dropdown > button {
-      background: transparent; border: 0; color: var(--muted); font: inherit; cursor: pointer;
-      padding: 8px 10px; border-radius: 10px; display: inline-flex; align-items: center; gap: 6px;
-    }
-    .dropdown > button:hover, .dropdown > button:focus { background: rgba(255,255,255,0.06); color: var(--text); outline: none; }
-    .menu { position: absolute; top: calc(100% + 10px); left: 0; min-width: 220px;
-      background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 8px;
-      box-shadow: var(--shadow); display: none;
-    }
-    .menu a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--muted); }
-    .menu a:hover { background: rgba(255,255,255,0.06); color: var(--text); }
-    .dropdown:focus-within .menu, .dropdown:hover .menu { display: block; }
-
-    /* ====== Hero / CTA ====== */
-    .hero {
-      padding: 56px 0 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background:
-        radial-gradient(800px 300px at 20% 0%, rgba(90,167,255,.10), transparent),
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-    }
-    .hero-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center; }
-    .hero h1 { font-size: clamp(28px, 4.5vw, 44px); line-height: 1.1; margin: 0 0 12px; }
-    .hero p { margin: 0 0 20px; color: var(--muted); }
-
-    .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 12px 18px; border-radius: 999px; border: 1px solid transparent; font-weight: 600; cursor: pointer;
-      transition: transform .06s ease; text-align: center;
-    }
-    .btn:active { transform: translateY(1px); }
-    .btn-primary { background: linear-gradient(180deg, var(--primary), var(--primary-2)); color: #061126; }
-    .btn-primary:hover { filter: brightness(1.05); }
-    .btn-ghost { background: transparent; border-color: rgba(255,255,255,.18); color: var(--text); }
-    .btn-ghost:hover { background: rgba(255,255,255,.06); }
-
-    .hero-card { background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
-    .hero-card img { border-radius: 12px; width: 100%; height: auto; }
-
-    /* ====== Content sections ====== */
-    section { padding: 36px 0; }
-
-    .card { background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-
-    .grid { display: grid; gap: 18px; }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-    @media (max-width: 880px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    }
-
-    /* Contact list */
-    .contact-item { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
-    .muted { color: var(--muted); }
-
-    /* Footer */
-    footer { margin-top: 40px; padding: 28px 0 44px; color: var(--muted); border-top: 1px solid rgba(255,255,255,0.08); }
-    .foot-grid { display: grid; gap: 16px; grid-template-columns: 1fr auto; align-items: center; }
-    .foot-links { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    /* Focus styles for accessibility */
-    :where(a, button, [tabindex]) { outline-offset: 2px; }
-    :where(a, button, [tabindex]):focus-visible { outline: 2px solid var(--accent); border-radius: 10px; }
-
-    /* Reduce motion */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
-  </style>
+  <link rel="icon" type="image/x-icon" href="./Logo+Option+1..png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the CIT - GRIT Conference</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-
-<body>
-  <!-- ====== Header / Nav ====== -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Main">
-      <div class="nav-left">
-        <a href="./index.html" aria-label="GRIT Conference Home">
-          <img src="./Logo+Option+1..png" alt="GRIT Conference logo" class="logo" />
-        </a>
-        <div class="brand">GRIT Conference</div>
+<body id="aboutcitbody">
+  <ul class="nav">
+    <li class="nav_image"><a href="./index.html"><img src="./Logo+Option+1..png" alt="GRIT Conference Logo" class="logo" /></a></li>
+    <li class="nav_item"><a href="./index.html">Home</a></li>
+    <li class="nav_item"><a href="./citpage.html">About CIT</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Interviews</a>
+      <div class="dropdown-content">
+        <a href="./Interviews_Guest.html">Guest Interviews</a>
+        <a href="./Interviews_Students.html">Student Interviews</a>
       </div>
-
-      <nav class="nav-links" aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="./citpage.html">About CIT</a>
-
-        <div class="dropdown">
-          <button aria-haspopup="true" aria-expanded="false">Interviews ▾</button>
-          <div class="menu" role="menu">
-            <a href="./Interviews_Guest.html" role="menuitem">Guest Interviews</a>
-            <a href="./Interviews_Students.html" role="menuitem">Student Interviews</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button aria-haspopup="true" aria-expanded="false">Get Involved ▾</button>
-          <div class="menu" role="menu">
-            <a href="./volunteer.html" role="menuitem">Volunteer</a>
-            <a href="./volunteer.html" role="menuitem">Donate</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button aria-haspopup="true" aria-expanded="false">Media ▾</button>
-          <div class="menu" role="menu">
-            <a href="./iPhotos.html" role="menuitem">Photos</a>
-            <a href="./iVideos.html" role="menuitem">Videos</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button aria-haspopup="true" aria-expanded="false">Featured ▾</button>
-          <div class="menu" role="menu">
-            <a href="./featuredcolleges.html" role="menuitem">Colleges</a>
-            <a href="./featuredspeakers.html" role="menuitem">Speakers</a>
-            <a href="./featuredsponsor.html" role="menuitem">Sponsors</a>
-          </div>
-        </div>
-
-        <a href="./iContactUs.html">Contact</a>
-        <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank" rel="noopener">CIT</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ====== Hero ====== -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <h1>Volunteer at the GRIT Conference</h1>
-        <p class="muted">Join students, educators, and community leaders to make this year’s event our best yet. Sign up in under two minutes—roles for all skill sets and schedules.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfu9Ddrh8WXg_ZBuYSnxBcT0xffar0MowJeRepMrfMVkKVEPw/viewform?usp=header" target="_blank" rel="noopener">Open Volunteer Form</a>
-          <a class="btn btn-ghost" href="#details">See roles & details</a>
-        </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Volunteer</a>
+      <div class="dropdown-content">
+        <a href="./volunteer.html">volunteer</a>
+        <a href="./volunteer.html">donate</a>
       </div>
-      <div class="hero-card" aria-hidden="true">
-        <img src="image001.jpg" alt="Students collaborating at the GRIT Conference" />
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Media</a>
+      <div class="dropdown-content">
+        <a href="./iPhotos.html">Photos</a>
+        <a href="./iVideos.html">Videos</a>
       </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Featured</a>
+      <div class="dropdown-content">
+        <a href="./featuredcolleges.html">Colleges</a>
+        <a href="./featuredspeakers.html">Speakers</a>
+        <a href="./featuredsponsor.html">Sponsors</a>
+      </div>
+    </li>
+    <li class="nav_item"><a href="iContactUs.html">Contact Us</a></li>
+    <li class="nav_image"><a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank"><img src="./citlogo.png" alt="CIT Logo" class="CITlogo" /></a></li>
+  </ul>
+
+  <section class="featuredhead">
+    <h3 id="FSpeaktitle">Volunteer</h3>
+    <div class="card card--blue volunteer-section" style="text-align:center; padding:2rem;">
+      <p>Please volunteer here!</p>
+      <button class="styled-volunteer-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfu9Ddrh8WXg_ZBuYSnxBcT0xffar0MowJeRepMrfMVkKVEPw/viewform?usp=header', '_blank')">Open the Google Form</button>
+      <p class="small" style="margin-top:.75rem; opacity:.9;">Opens in a new tab.</p>
     </div>
   </section>
 
-  <!-- ====== Why volunteer ====== -->
-  <main id="main">
-    <section id="details">
-      <div class="container grid grid-3">
-        <div class="card">
-          <h3 style="margin-top:0">Make an impact</h3>
-          <p class="muted">Help showcase innovation at Deep Run’s Center for Information Technology and support a smooth, welcoming experience for attendees.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Flexible shifts</h3>
-          <p class="muted">Morning, afternoon, and full‑day options available. We’ll match roles to your interests—registration, stage crew, speaker support, and more.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Community & experience</h3>
-          <p class="muted">Build real event experience and earn volunteer hours while connecting with peers, alumni, and industry guests.</p>
-        </div>
-      </div>
-    </section>
+  <br><br><br><br>
 
-    <!-- ====== Quick Apply Callout ====== -->
-    <section>
-      <div class="container">
-        <div class="card" style="text-align:center">
-          <p class="muted" style="margin:0 0 10px">Ready to help?</p>
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfu9Ddrh8WXg_ZBuYSnxBcT0xffar0MowJeRepMrfMVkKVEPw/viewform?usp=header" target="_blank" rel="noopener">Volunteer – Google Form</a>
-          <div class="muted" style="margin-top:8px; font-size:.95rem">The form opens in a new tab.</div>
-        </div>
-      </div>
-    </section>
+  <style>
+    .center { display: flex; justify-content: center; align-items: center; height: 50vh; }
+  </style>
+  <p id="centertext">Office Phone Number: 804-346-6343</p>
+  <br><br>
+  <p id="centertext">Ms. Norris: lmnorris@henrico.k12.va.us</p>
+  <br><br>
+  <p id="centertext">Deep Run High School Address: 4801 Twin Hickory Road Glen Allen, Virginia 23059</p>
+  <br><br><br><br>
 
-    <!-- ====== Contacts & Address ====== -->
-    <section>
-      <div class="container grid grid-2">
-        <div class="card">
-          <h3 style="margin-top:0">Contact</h3>
-          <div class="grid" style="gap:16px">
-            <div class="contact-item">
-              <div aria-hidden="true">📞</div>
-              <div>
-                <div>Office</div>
-                <div class="muted"><a href="tel:+18043466343">(804) 346‑6343</a></div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div aria-hidden="true">✉️</div>
-              <div>
-                <div>Ms. Norris</div>
-                <div class="muted"><a href="mailto:lmnorris@henrico.k12.va.us">lmnorris@henrico.k12.va.us</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 style="margin-top:0">Location</h3>
-          <p class="muted" style="margin:0 0 8px">Deep Run High School<br/>4801 Twin Hickory Road<br/>Glen Allen, Virginia 23059</p>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=4801+Twin+Hickory+Road+Glen+Allen+Virginia+23059" target="_blank" rel="noopener">Open in Google Maps</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ====== Footer ====== -->
-  <footer>
-    <div class="container foot-grid">
-      <div class="foot-links">
-        <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank" rel="noopener">CIT Website</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://deeprun.henricoschools.us/" target="_blank" rel="noopener">Deep Run HS</a>
-      </div>
-      <div class="muted">© <span id="year"></span> GRIT Conference · Authors: Kera P., Anooshka P., Grace L., Yomna A.</div>
-    </div>
+  <footer class="footer">
+    <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" id="citweb" target="_blank">CIT Website</a> ||
+    <a href="https://deeprun.henricoschools.us/" id="deepweb" target="_blank">Deep Run's Website</a>
+    <p>4801 Twin Hickory Road Glen Allen, Virginia 23059</p>
+    <p>Authors: Kera P., Anooshka P., Grace L., Yomna A.</p>
+    <br>
   </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/x-icon" href="./Logo+Option+1..png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the CIT - GRIT Conference</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="aboutcitbody">
+  <ul class="nav">
+    <li class="nav_image"><a href="./index.html"><img src="./Logo+Option+1..png" alt="GRIT Conference Logo" class="logo" /></a></li>
+    <li class="nav_item"><a href="./index.html">Home</a></li>
+    <li class="nav_item"><a href="./citpage.html">About CIT</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Interviews</a>
+      <div class="dropdown-content">
+        <a href="./Interviews_Guest.html">Guest Interviews</a>
+        <a href="./Interviews_Students.html">Student Interviews</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Volunteer</a>
+      <div class="dropdown-content">
+        <a href="./volunteer.html">volunteer</a>
+        <a href="./volunteer.html">donate</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Media</a>
+      <div class="dropdown-content">
+        <a href="./iPhotos.html">Photos</a>
+        <a href="./iVideos.html">Videos</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Featured</a>
+      <div class="dropdown-content">
+        <a href="./featuredcolleges.html">Colleges</a>
+        <a href="./featuredspeakers.html">Speakers</a>
+        <a href="./featuredsponsor.html">Sponsors</a>
+      </div>
+    </li>
+    <li class="nav_item"><a href="iContactUs.html">Contact Us</a></li>
+    <li class="nav_image"><a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank"><img src="./citlogo.png" alt="CIT Logo" class="CITlogo" /></a></li>
+  </ul>
 
-  <script>
-    // Dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <section class="featuredhead">
+    <h3 id="FSpeaktitle">Volunteer</h3>
+    <div class="card card--blue volunteer-section" style="text-align:center; padding:2rem;">
+      <p>Please volunteer here!</p>
+      <button class="styled-volunteer-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfu9Ddrh8WXg_ZBuYSnxBcT0xffar0MowJeRepMrfMVkKVEPw/viewform?usp=header', '_blank')">Open the Google Form</button>
+      <p class="small" style="margin-top:.75rem; opacity:.9;">Opens in a new tab.</p>
+    </div>
+  </section>
 
-    // Improve dropdown a11y (toggle aria-expanded)
-    document.querySelectorAll('.dropdown > button').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        document.querySelectorAll('.dropdown > button').forEach(b => b.setAttribute('aria-expanded', 'false'));
-        btn.setAttribute('aria-expanded', (!expanded).toString());
-      });
-    });
+  <br><br><br><br>
 
-    // Close dropdowns on outside click
-    document.addEventListener('click', (e) => {
-      const isDropdown = e.target.closest('.dropdown');
-      if (!isDropdown) {
-        document.querySelectorAll('.dropdown > button').forEach(b => b.setAttribute('aria-expanded', 'false'));
-      }
-    });
-  </script>
+  <style>
+    .center { display: flex; justify-content: center; align-items: center; height: 50vh; }
+  </style>
+  <p id="centertext">Office Phone Number: 804-346-6343</p>
+  <br><br>
+  <p id="centertext">Ms. Norris: lmnorris@henrico.k12.va.us</p>
+  <br><br>
+  <p id="centertext">Deep Run High School Address: 4801 Twin Hickory Road Glen Allen, Virginia 23059</p>
+  <br><br><br><br>
+
+  <footer class="footer">
+    <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" id="citweb" target="_blank">CIT Website</a> ||
+    <a href="https://deeprun.henricoschools.us/" id="deepweb" target="_blank">Deep Run's Website</a>
+    <p>4801 Twin Hickory Road Glen Allen, Virginia 23059</p>
+    <p>Authors: Kera P., Anooshka P., Grace L., Yomna A.</p>
+    <br>
+  </footer>
 </body>
 </html>
