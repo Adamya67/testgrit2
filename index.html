@@ -1,290 +1,111 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-  <!-- Metadata about the page: title, font, reference to stylesheet -->
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="./Logo+Option+1..png">
-  <title>Home - GRIT Conference</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="script.js"></script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home – GRIT Conference</title>
+  <link rel="icon" type="image/png" href="./Logo+Option+1..png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0b1020;--panel:#121a33;--panel-2:#0f1630;--text:#eaf0ff;--muted:#c3cbea;--primary:#5aa7ff;--primary-2:#3f8bff;--accent:#7bffc0;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%, rgba(90,167,255,.12), transparent),radial-gradient(1200px 600px at -10% 10%, rgba(123,255,192,.08), transparent),var(--bg);line-height:1.6}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{color:var(--primary-2)}
+    img{max-width:100%;height:auto;display:block}
+    .container{width:min(1100px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:40;background:rgba(11,16,32,.7);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.2)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-weight:500;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover,.nav-links a:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .dropdown{position:relative}
+    .dropdown>button{background:transparent;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px;display:inline-flex;align-items:center;gap:6px}
+    .dropdown>button:hover,.dropdown>button:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .menu{position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px;box-shadow:var(--shadow);display:none}
+    .menu a{display:block;padding:10px 12px;border-radius:8px;color:var(--muted)}
+    .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .dropdown:focus-within .menu,.dropdown:hover .menu{display:block}
+    .hero{padding:80px 0 60px;text-align:center;background:radial-gradient(800px 300px at 50% 0%, rgba(90,167,255,.10), transparent);border-bottom:1px solid rgba(255,255,255,.08)}
+    .hero h1{font-size:clamp(30px,5vw,50px);margin:0;color:var(--accent)}
+    .hero p{color:var(--muted);font-size:1.1rem;max-width:700px;margin:12px auto 0}
+    .video-container{margin:60px auto;text-align:center}
+    iframe{border-radius:12px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .section{padding:30px 0}
+    .section h2{color:var(--accent)}
+    .section p{color:var(--muted);max-width:800px;margin:auto;text-align:justify}
+    footer{margin-top:40px;padding:28px 0 44px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);text-align:center}
+  </style>
 </head>
-<!-- By Kera Parham -->
-
-<!-- body of the page -->
-<body class="indexbody">
-
-  <!-- header section goes from nav bar to the end of the brief description paragraph -->
-
+<body>
   <header>
-    <!-- Navigation bar -->
-    
-    <!-- The navigation bar consists of a list that consists of different pages that the user can go to when the specific text is clicked. -->
-  
-    <ul class="nav">
-      <li class="nav_image"><a href="./index.html"><img src="./Logo+Option+1..png" alt="GRIT Conference Logo" class="logo"></a></li>
-
-      <li class="nav_item"><a href="./index.html">Home</a></li>
-      <li class="nav_item"><a href="./citpage.html">About CIT</a></li>
-
-      <!-- dropdown for interviews -->
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Interviews</a>
-        <div class="dropdown-content">
-          <a href="./Interviews_Guest.html">Guest Interviews</a>
-          <a href="./Interviews_Students.html">Student Interviews</a>
+    <div class="container nav">
+      <div class="brand">GRIT Conference</div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./citpage.html">About CIT</a>
+        <div class="dropdown">
+          <button>Interviews ▾</button>
+          <div class="menu">
+            <a href="./Interviews_Guest.html">Guest Interviews</a>
+            <a href="./Interviews_Students.html">Student Interviews</a>
+          </div>
         </div>
-      </li>
-
-            <!-- Volunteer/donate -->
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">volunteer</a>
-        <div class="dropdown-content">
-          <a href="./volunteer.html">volunteer</a>
-          <a href="./volunteer.html">donate</a>
+        <div class="dropdown">
+          <button>Get Involved ▾</button>
+          <div class="menu">
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./volunteer.html">Donate</a>
+          </div>
         </div>
-      </li>
-
-
-      <!-- dropdown for Media -->
-  <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Media</a>
-      <div class="dropdown-content">
-        <a href="./iPhotos.html">Photos</a>
-        <a href="./iVideos.html">Videos</a>
-      </div>
-    </li>      
-      <!-- a drop down for the featured guests -->
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Featured</a>
-        <div class="dropdown-content">
-          <a href="./featuredcolleges.html">Colleges</a>
-          <a href="./featuredspeakers.html">Speakers</a>
-          <a href="./featuredsponsor.html">Sponsors</a>
+        <div class="dropdown">
+          <button>Media ▾</button>
+          <div class="menu">
+            <a href="./iPhotos.html">Photos</a>
+            <a href="./iVideos.html">Videos</a>
+          </div>
         </div>
-      </li>
-
-
-        <!-- Dropdown with registration links -->
-      <!-- <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Registration</a>
-        <div class="dropdown-content">
-          <a href="https://forms.gle/qLJaKHhzVPaXjfhRA" target="_blank">College Registration</a>
-          <a href="https://forms.gle/uxxty1npJLrFctLJ9" target="_blank">Student Registration</a>
-         <a href="https://forms.gle/RBKTe2yucbAcHcZn7" target="_blank">Volunteer Registration</a>
-          <a href="https://forms.gle/UnEQ94Ep12wDHKYr8" target="_blank">Speakers, Sponsors, Vendors Registration</a>
+        <div class="dropdown">
+          <button>Featured ▾</button>
+          <div class="menu">
+            <a href="./featuredcolleges.html">Colleges</a>
+            <a href="./featuredspeakers.html">Speakers</a>
+            <a href="./featuredsponsor.html">Sponsors</a>
+          </div>
         </div>
-      </li> -->
-
-      <li class="nav_item"><a href="iContactUs.html">Contact Us</a></li>
-
-      <li class="nav_image"><a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank"><img src="./citlogo.png" alt="CIT Logo" class="CITlogo"></a></li>
-    </ul>
-    <!-- line breaks for spacing -->
-    <br>
-    <br>
-    <br>
-    <br>
-
-    
-    <br>
-    <br>
-    <br>
-    <!-- Container for the typing animation. -->
-    <div class="container">
-      <h3>The CIT presents...</h3>
-      <div class="typewriter">
-        <h1 id="title">The GRIT Conference!</h1>
-      </div>
+        <a href="./iContactUs.html">Contact</a>
+        <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank">CIT</a>
+      </nav>
     </div>
-    <br>
-
-    <!-- Images for the first header section. -->
-    <images class="flexcontainer3">
-      <!-- Calendar icon with a link adding it to your google calendar -->
-      <!-- <img src="./calendar-removebg-preview.png" class="calender" id="calendar"> -->
-      <!-- <p class="date"><a target="_blank"
-          href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzJhN3ZrNTgxbzU4aTU2OXFtNWIwazE5MzIgY19oNGRnanR2b3E3djNzNDU0OWllaHN0aGkzNEBn&tmsrc=c_h4dgjtvoq7v3s4549iehsthi34%40group.calendar.google.com">N/A</a></p> -->
-      
-      <!-- pinpoint icon with a link to directions -->
-      <!-- <img src="./pinpoint-removebg-preview.png" class="location" id="location">
-      <p class="place"><a target="_blank" href="https://www.artsglenallen.com/directions">N/A</a></p>
-    </images> -->
-
-
-
-
-    <article>
-      <!-- Brief overview of GRIT -->
-      <h3 class="topdesc"> The Growing Resources of Information Technology Conference, also known as GRIT, was created to give the students in the Center for Information Technology at Deep Run High School a professional conference just for them. With the help of speakers, vendors, alumni, and college representatives, students left with an enhanced understanding of the wide variety of opportunities available to them within Information Technology and Computer Science. The conference offered students breakout sessions in Education, Career, and Technology.
-      </h3>
-  
-    </article>
-    <br>
-    <br>
-    <br>
-    <br>
-    
   </header>
-    
-  <br>
-  <br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/UBARJlHKX4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border: 10px solid #0063b1; display: block; margin: 0 auto;" allowfullscreen></iframe>
 
-  <!-- More detailed information about GRIT, its purpose, and the CIT -->
-  <article class="gritdesc">
-    <h3 id="tt_desc">About GRIT</h3>
-    <p class="aboutgrit">
-      Deep Run’s Center for Information Technology strives to equip its students with the skills needed to pursue
-      successful careers in
-      Information Technology and Computer Science.
-      Our curriculum prepares students with rigorous courses in Computer Science and develops
-      their soft skills during their four years here.
-      <br><br>
+  <section class="hero">
+    <div class="container">
+      <h1>The GRIT Conference</h1>
+      <p>Growing Resources in Information Technology — Deep Run High School’s CIT-hosted conference for innovation and learning.</p>
+    </div>
+  </section>
 
-      We created GRIT! GRIT’s intention was to give our students a professional conference to help prepare them for their future. Students had the opportunity to network and learn from speakers, vendors, and college representatives, as well as CIT alumni, who were actively navigating the world of Information Technology and Computer Science. GRIT prepared our students in a professional setting and was beneficial to their future!
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UBARJlHKX4o" title="GRIT Conference Video" allowfullscreen></iframe>
+  </div>
 
-      <br><br>
-      
-      The CIT is excited to announce that Dr. Vint Cerf, the Father of the Internet, was our opening Keynote Speaker for the 2023 conference! It was a wonderful opportunity for our students to hear directly from someone who had such a significant impact on our world and whom they had learned about in their studies at the CIT.
-    </p>
-    
-    <br><br>
-    
-    
-  </article>
-  
-  <!-- This section provides the schedule and agenda for the conference. -->
-  <main id="agenda">
-    <!-- Tracks and Sessions -->
-    <!-- <h2 class="tt_tracksession">Tracks and Sessions</h2>
-    <table class="tracksession"> -->
-      
-      <!-- table headers -->
-      <!-- <tr>
-        <th class="tracksession_th">Education</th>
-        <th class="tracksession_th">Careers</th>
-        <th class="tracksession_th">Technology</th>
-      </tr>
-      <tr>
-        <td class="tracksession_td">Alumni Panel</td>
-        <td class="tracksession_td">Alumni Panel</td>
-        <td class="tracksession_td">GitHub</td>
-      </tr>
-      <tr>
-        <td class="tracksession_td">Major/Minor Options</td>
-        <td class="tracksession_td">Career Panel Various Organizations - Gov., IT, Non-IT</td>
-        <td class="tracksession_td">Data Science Tools</td>
-      </tr>
-      <tr>
-        <td class="tracksession_td">Internships in College</td>
-        <td class="tracksession_td">Building Your Brand</td>
-        <td class="tracksession_td">Technical Interviews</td>
-      </tr>
-      <tr>
-        <td class="tracksession_td"></td>
-        <td class="tracksession_td">Work Life Balance</td>
-        <td class="tracksession_td">Real World PM in development</td>
-      </tr>
-      <tr>
-        <td class="tracksession_td"></td>
-        <td class="tracksession_td">Entrepreneurship</td>
-        <td class="tracksession_td"></td>
-      </tr>
-
-    </table>
-    <br>
-    <br>
-    <br> -->
-    <!-- Specific agenda for the conference -->
-    <!-- <h2 class="tt_agenda">Schedule</h2>
-    <table class="agenda_t">
-      <tbody>
-        <tr>
-          <th class="agenda_th">Event</th>
-          <th class="agenda_th">Time</th>
-
-        </tr>
-        <tr>
-          <td class="agenda_td">Registration/Check-in</td>
-          <td class="agenda_td">8:45 - 3:30</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Opening Session with Keynote speaker</td>
-          <td class="agenda_td">9:30 - 10:45</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Vendor Hall</td>
-          <td class="agenda_td"> 11:00 - 3:45</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Session 1</td>
-          <td class="agenda_td">11:00 - 11:45</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Lunch</td>
-          <td class="agenda_td">11:45 - 12:45</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Session 2</td>
-          <td class="agenda_td">1:00 - 1:45</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Session 3</td>
-          <td class="agenda_td">2:00 - 2:45</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Session 4</td>
-          <td class="agenda_td">3:00 - 3:45</td>
-        </tr>
-        <tr>
-          <td class="agenda_td">Closing Session with Speaker</td>
-          <td class="agenda_td">4:00 - 4:45</td>
-        </tr>
-      </tbody>
-    </table> 
-
-    <br>
-    <br>
-    <br> -->
-
-    <!-- countdown that is organized into a fieldset -->
-    <!-- <fieldset id="countdown">
-      <legend>Countdown until the GRIT Conference!</legend>
-      <div class="time"> -->
-        <!-- the actual countdown is based off of javascript -- the demo holds it -->
-        <!-- <p id="demo"></p>
-      </div>
-    </fieldset> -->
-
-    <br>
-    <br>
-    <br>
-
+  <main>
+    <section class="section container">
+      <h2>About GRIT</h2>
+      <p>The <b>Growing Resources of Information Technology Conference (GRIT)</b> was created to provide students in Deep Run’s Center for Information Technology with a professional conference experience. With the help of speakers, vendors, alumni, and college representatives, students gain a greater understanding of opportunities in IT and Computer Science. The event offers breakout sessions in Education, Career, and Technology, providing insight into both academic and professional growth within the field.</p>
+      <p>In 2023, the CIT proudly hosted <b>Dr. Vint Cerf</b>—the Father of the Internet—as keynote speaker, giving students the opportunity to hear from one of the world’s most influential innovators in technology.</p>
+    </section>
   </main>
 
-
-  <!-- Footer -->
-  <footer class=footer>
-    <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" id="citweb" target="_blank">CIT Website</a> ||
-    <a href="https://deeprun.henricoschools.us/" id="deepweb" target="_blank">Deep Run's Website</a>
-    <p>4801 Twin Hickory Road
-      Glen Allen, Virginia 23059</p>
-    <!-- the coolest people in the world -->
-    <p> Authors: Kera P., Anooshka P., Grace L., Yomna A.</p>
-    <br>
+  <footer>
+    <div>© <span id="year"></span> GRIT Conference · Authors: Kera P., Anooshka P., Grace L., Yomna A.</div>
   </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
-
-
-
-
-
