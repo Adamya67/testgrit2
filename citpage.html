@@ -1,259 +1,139 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-  <!-- Metadata about the page: title, font, reference to stylesheet -->
-  <meta charset="utf-8">
-  <link rel="icon" type="image/x-icon" href="./Logo+Option+1..png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About the CIT - GRIT Conference</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About the CIT – GRIT Conference</title>
+  <link rel="icon" type="image/png" href="./Logo+Option+1..png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0b1020;--panel:#121a33;--panel-2:#0f1630;--text:#eaf0ff;--muted:#c3cbea;--primary:#5aa7ff;--primary-2:#3f8bff;--accent:#7bffc0;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%, rgba(90,167,255,.12), transparent),radial-gradient(1200px 600px at -10% 10%, rgba(123,255,192,.08), transparent),var(--bg);line-height:1.6}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{color:var(--primary-2)}
+    .container{width:min(1100px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:40;background:rgba(11,16,32,.7);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.2)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-weight:500;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover,.nav-links a:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .dropdown{position:relative}
+    .dropdown>button{background:transparent;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px;display:inline-flex;align-items:center;gap:6px}
+    .dropdown>button:hover,.dropdown>button:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .menu{position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px;box-shadow:var(--shadow);display:none}
+    .menu a{display:block;padding:10px 12px;border-radius:8px;color:var(--muted)}
+    .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .dropdown:focus-within .menu,.dropdown:hover .menu{display:block}
+    .hero{padding:48px 0 20px;border-bottom:1px solid rgba(255,255,255,.08);background:radial-gradient(800px 300px at 20% 0%, rgba(90,167,255,.10), transparent)}
+    .hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 10px}
+    .hero p{margin:0;color:var(--muted)}
+    .section{padding:28px 0}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:30px}
+    .card h2{margin-top:0;color:var(--accent)}
+    .button{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.18);background:transparent;color:var(--text);font-weight:600}
+    .button:hover{background:rgba(255,255,255,.06)}
+    iframe{border-radius:12px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    figure{margin:0;text-align:center;color:var(--muted)}
+    figure img{border-radius:12px;max-width:100%;height:auto;box-shadow:var(--shadow)}
+    fieldset{border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;margin-top:20px;background:var(--panel-2)}
+    legend{padding:0 12px;color:var(--accent);font-weight:600}
+    footer{margin-top:40px;padding:28px 0 44px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);text-align:center}
+  </style>
 </head>
-
-<!--by Anooshka Pendyal-->
-
-<!-- body for the About CIT page -->
-
-<body id="aboutcitbody">
-
-  <!--Navigation bar-->
-  <!-- The navigation bar consists of a list that consists of different pages that the user can go to when the specific text is clicked. -->
-  <ul class="nav">
-    <li class="nav_image"><a href="./index.html"><img src="./Logo+Option+1..png" alt="GRIT Conference Logo" class="logo"></a></li>
-    <li class="nav_item"><a href="./index.html">Home</a></li>
-    <li class="nav_item"><a href="./citpage.html">About CIT</a></li>
-
-    <!-- dropdown for interviews -->
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Interviews</a>
-      <div class="dropdown-content">
-        <a href="./Interviews_Guest.html">Guest Interviews</a>
-        <a href="./Interviews_Students.html">Student Interviews</a>
-      </div>
-    </li>
-
-    <!-- Volunteer/donate -->
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">volunteer</a>
-        <div class="dropdown-content">
-          <a href="./volunteer.html">volunteer</a>
-          <a href="./volunteer.html">donate</a>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">GRIT Conference</div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./citpage.html">About CIT</a>
+        <div class="dropdown">
+          <button>Interviews ▾</button>
+          <div class="menu">
+            <a href="./Interviews_Guest.html">Guest Interviews</a>
+            <a href="./Interviews_Students.html">Student Interviews</a>
+          </div>
         </div>
-      </li>
-    <!-- dropdown for Media -->
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Media</a>
-      <div class="dropdown-content">
-        <a href="./iPhotos.html">Photos</a>
-        <a href="./iVideos.html">Videos</a>
+        <div class="dropdown">
+          <button>Get Involved ▾</button>
+          <div class="menu">
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./volunteer.html">Donate</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>Media ▾</button>
+          <div class="menu">
+            <a href="./iPhotos.html">Photos</a>
+            <a href="./iVideos.html">Videos</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>Featured ▾</button>
+          <div class="menu">
+            <a href="./featuredcolleges.html">Colleges</a>
+            <a href="./featuredspeakers.html">Speakers</a>
+            <a href="./featuredsponsor.html">Sponsors</a>
+          </div>
+        </div>
+        <a href="./iContactUs.html">Contact</a>
+        <a href="https://informationtechnology.henricoschools.us/" target="_blank">CIT</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>About the CIT</h1>
+      <p>Explore the Center for Information Technology’s purpose, curriculum, and community at Deep Run High School.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Our Mission</h2>
+          <p>The <b>Center for Information Technology (CIT)</b> at Deep Run High School in Glen Allen, Virginia, is a highly selective specialty center for students passionate about technology. CIT develops advanced technical and soft skills to prepare students for success in college and professional careers. Core values like <b>respect</b> and <b>integrity</b> drive its curriculum and culture.</p>
+        </div>
+        <div class="card">
+          <h2>Curriculum</h2>
+          <p>The CIT curriculum combines academic rigor with real-world relevance, offering IT and computer science courses that challenge students to push their limits. CIT alumni consistently share how the program’s coursework and experiences prepared them for higher education and industry careers.</p>
+          <a href="https://informationtechnology.henricoschools.us/" target="_blank" class="button">Learn more about the CIT curriculum</a>
+        </div>
+        <div class="card">
+          <h2>Student Work Showcase</h2>
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSDfYGlW_WX_xEPxE8UCAIm5A1Ia1hIEwVehN17Fzh-cOTNIEilMhCxOHKcjtlatja5SVh381CuMstL/embed?start=true&loop=true&delayms=5000" width="100%" height="450" allowfullscreen></iframe>
+        </div>
+        <div class="card">
+          <h2>Community & Experience</h2>
+          <p>The CIT extends learning beyond the classroom with <b>Community Innovation Technology projects</b> and <b>Senior Internships</b>. Students collaborate with real clients, apply agile methodologies like Scrum, and gain hands-on experience solving community challenges. The tight-knit CIT community also enjoys events like the Thanksgiving potluck and field trips, balancing hard work with camaraderie.</p>
+        </div>
+        <div class="card">
+          <h2>Student Reflections</h2>
+          <figure>
+            <img src="./CIT_Hallway.jpg" alt="CIT Hallway with CIT classrooms" />
+            <figcaption>The CIT Wing in Deep Run High School is at the heart of innovation and learning.</figcaption>
+          </figure>
+          <fieldset>
+            <legend>Student Statements</legend>
+            <p>“The CIT has given me so many opportunities and taught me invaluable lessons. It's a tight-knit community where everyone connects and supports each other. I'm sad to leave, but CIT will always have a special place in my heart.” — <em>Nischal A., Senior</em></p>
+            <p>“The CIT has been a catalyst for my growth in management and self-advocacy as a woman in STEM. It gave me opportunities to volunteer and build meaningful relationships with my peers.” — <em>Vee P., Sophomore</em></p>
+          </fieldset>
+        </div>
       </div>
-    </li>
-    
-    <!-- dropdown for featured guests -->
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Featured</a>
-      <div class="dropdown-content">
-        <a href="./featuredcolleges.html">Colleges</a>
-        <a href="./featuredspeakers.html">Speakers</a>
-        <a href="./featuredsponsor.html">Sponsors</a>
-      </div>
-    </li>
+    </section>
+  </main>
 
-    <!-- dropdown for registration: direct links to forms -->
-    <!-- <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Registration</a>
-      <div class="dropdown-content">
-        <a href="https://forms.gle/qLJaKHhzVPaXjfhRA" target="_blank">College Registration</a>
-        <a href="https://forms.gle/uxxty1npJLrFctLJ9" target="_blank">Student Registration</a>
-        <a href="https://forms.gle/RBKTe2yucbAcHcZn7" target="_blank">Volunteer Registration</a>
-        <a href="https://forms.gle/UnEQ94Ep12wDHKYr8" target="_blank">Speakers, Sponsors, Vendors Registration</a>
-      </div>
-    </li> -->
+  <footer>
+    <div>© <span id="year"></span> GRIT Conference · Authors: Kera P., Anooshka P., Grace L., Yomna A.</div>
+  </footer>
 
-    <li class="nav_item"><a href="iContactUs.html">Contact Us</a></li>
-
-    <li class="nav_image"><a href="https://informationtechnology.henricoschools.us/" target="_blank"><img
-          src="./citlogo.png" alt="CIT Logo" class="CITlogo"></a></li>
-  </ul>
-
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <br>
-    <br>
-    <br>
-
-  <!-- 3-4 paragraphs about the CIT -->
-  <!-- This part is the content that summarizes the CIT's purpose and provides detail on other interesting information. -->
-  <!-- The slideshow showing student work will be between the paragraphs -->
-  <div id="about_cit">
-
-    <h1 id="page_title">About the CIT</h1>
-
-    <!-- div for styling purposes -->
-    <div class="about_cit_border">
-
-      <!-- overview of CIT -->
-      <p>
-        The <b>Center for Information Technology (CIT)</b> at Deep Run High School, located in Glen Allen, Virginia, is
-        a highly selective specialty center for students pursuing a passion in technology. Here at the CIT, we strive to
-        develop our students with both advanced technical skills and the soft skills necessary to complete real-world
-        projects and to prepare them for success in all of their future endeavors. The core values that we aim to
-        instill in CIT students are <b>respect</b> and <b>integrity</b>, both
-        of which are highly emphasized through our rigorous curriculum and projects.
-      </p>
-
-      <!-- CIT curriculum -->
-      <p>
-        The CIT curriculum consists of engaging and challenging courses that allow students to go above and beyond their
-        limits. These classes and our hallmark experiences lay the foundation needed to prepare students for higher
-        education and careers in
-        information technology. CIT Alumni regularly communicate how well prepared they were for college and beyond
-        because of their courses and experiences in the CIT.
-      </p>
-
-      <!-- link to CIT curriculum -->
-      <div class="button-container-div">
-        <a href="https://informationtechnology.henricoschools.us/" target="_blank" class="button"
-          id="cit_curr">Learn more about the CIT curriculum!</a>
-      </div>
-
-    </div>
-
-    <br>
-    <br>
-
-    <!-- embeded google slides with student samples and a brief explanation -->
-    <div id="student_samples">
-      <h1>Check out some student work!</h1>
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSDfYGlW_WX_xEPxE8UCAIm5A1Ia1hIEwVehN17Fzh-cOTNIEilMhCxOHKcjtlatja5SVh381CuMstL/embed?start=true&loop=true&delayms=5000"
-        frameborder="0" width="75%" height="525" allowfullscreen="true" mozallowfullscreen="true"
-        webkitallowfullscreen="true"></iframe>
-    </div>
-
-    <br>
-
-    <!-- div for styling -->
-    <div class="about_cit_border">
-
-      <!-- real-world connection in CIT -->
-      <p>
-        Not only does the CIT provide IT/CS-specific classes, but it also provides opportunities for students to obtain
-        work
-        experience through internships with various community partners. One highlight of students’ experience at
-        the CIT is the <b>Community Innovation Technology (CIT) projects</b>. In groups, sophomore and junior students
-        work with outside organizations to complete a project that is beneficial to the community. In these three month
-        projects, students create technical solutions for their clients utilizing the Scrum project management
-        methodology, exposing them to the many facets of the professional world. Prior to the students’ senior
-        year at the CIT, they participate in a <b>Senior Internship</b>, giving them a chance to see what an IT career
-        would be like and allowing them to exercise their previously learned project management and technical skills and
-        develop new professional skills as well.
-      </p>
-
-      <!-- CIT community -->
-      <p>
-        Finally, students and faculty in the CIT form a tight-knit community. Various events are held throughout the
-        year, such as the Thanksgiving potluck and field trips, where students can get together to unwind and have fun
-        as a community. Students in the CIT are also well-rounded and participate in numerous CIT-related
-        extracurriculars, like Girls of CIT, and non-CIT-related extracurriculars, like Blue Cheese Robotics, marching
-        band, school sports, and multiple prestigious honors societies.
-      </p>
-
-      <!-- This is the link to the offical CIT website. -->
-      <div class="button-container-div">
-        <a href="https://informationtechnology.henricoschools.us/" target="_blank" class="button">Visit the CIT website!</a>
-      </div>
-    </div>
-  </div>
-  <br>
-
-  <div class="flex-container-statements">
-    <div>
-      <!--<img src="CIT_Hallway.jpg">-->
-      <div id="statement_pic">
-        <figure>
-          <!-- A picture of Deep Run High School -->
-          <img id="drpic" src="./CIT_Hallway.jpg" alt="CIT Hallway with CIT classrooms">
-          <figcaption>The CIT Wing in Deep Run High School is at the heart of the CIT.</figcaption>
-        </figure>
-      </div>
-    </div>
-    
-    <div id="statements-div">
-      <fieldset id="statements">
-        <legend class="anooshkaisarat">Student Statements</legend>
-        <p>"The CIT has given me so many opportunities, so many good memories, and taught me so many life lessons. 
-          It's a vibrant, tight-knit community where everybody throughout the CIT interacts with each other; we're one big family. 
-          I'm sad to be leaving this year, but the CIT will always have a significant impact on my life!" --
-          <em>Nischal A.
-            , senior, Webmaster of the Computer Science Honor Society</em>
-        </p>
-        <p>"The CIT has acted as a catalyst for my growth in management and self-advocation which is a wonderful thing
-          to
-          have experienced as a woman in the STEM field. In addition, I have had opportunities to volunteer in my
-          community and make meaningful relationships with my classmates." -- <em>Vee P., sophomore, Roving Reporter of
-            the CIT Student Council</em></p>
-      </fieldset>
-    </div>
-  </div>
-
-
-  <!-- Student Statements -->
-  <div id="student_statements">
-
-    <div id="statement_pic">
-      <!--
-      <figure> -->
-      <!-- A picture of Deep Run High School -->
-      <!--
-        <img id="drpic" src="./CIT_Hallway.jpg" alt="CIT Hallway with CIT classrooms">
-        <figcaption>The CIT Wing in Deep Run High School is at the heart of the CIT.</figcaption>
-      </figure>
-    </div>
-      -->
-
-      <!-- Here are the statements that some students made about the CIT and their experiences. -->
-
-      <!--
-    <fieldset id="statements">
-      <legend class="anooshkaisarat">Student Statements</legend>
-      <p>"The CIT is what reinforced my love and passion for technology. Going into the center I didn’t have much
-        knowledge on IT and CS but having classes like AP Computer Science Principles, IT Project Management, etc,
-        taught me so much more and drove me to study more in CS. The CIT also helped me build my confidence, whether it
-        was through group projects, joining Girls of CIT, or giving presentations. It’s definitely the reason I am who
-        I’ve become and I’m so very grateful for every step I’ve taken with the center since I’ve joined." -- <em>Zaara
-          A., senior, president of the CIT Student Council, Chief Executive Ambassador for Equity Ambassadors, president
-          and founder of the Muslim Student Association</em></p>
-      <p>"The CIT has acted as a catalyst for my growth in management and self-advocation which is a wonderful thing to
-        have experienced as a woman in the STEM field. In addition, I have had opportunities to volunteer in my
-        community and make meaningful relationships with my classmates." -- <em>Vee P., sophomore, Roving Reporter of
-          the CIT Student Council</em></p>
-    </fieldset>
-  -->
-
-    </div>
-  </div>
-
-    <!-- Footer -->
-  <div>
-    <footer class="footer">
-      <a href="https://informationtechnology.henricoschools.us/" id="citweb" target="_blank">CIT Website</a> ||
-      <a href="https://deeprun.henricoschools.us/" id="deepweb" target="_blank">Deep Run's Website</a>
-      <p>4801 Twin Hickory Road
-        Glen Allen, Virginia 23059</p>
-      <p> Authors: Kera P., Anooshka P., Grace L., Yomna A.</p>
-      <br>
-    </footer>
-  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
-
 </html>
-
-
-
