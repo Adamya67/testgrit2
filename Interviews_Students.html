@@ -1,165 +1,121 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <!-- Metadata about the page: title, font, reference to stylesheet -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./Logo+Option+1..png">
-    <title>Interviews_Students - GRIT Conference</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
-  
-  </head>
-  
-  <!-- body of the page -->
-  <body class="indexbody">
-  
-    <!-- header section goes from nav bar to the end of the brief description paragraph -->
-    <header>
-      <!-- Navigation bar -->
-      <!-- The navigation bar consists of a list that consists of different pages that the user can go to when the specific text is clicked. -->
-      <ul class="nav">
-        <li class="nav_image"><a href="./index.html"><img src="./Logo+Option+1..png" alt="GRIT Conference Logo" class="logo"></a></li>
-        <li class="nav_item"><a href="./index.html">Home</a></li>
-        <li class="nav_item"><a href="./citpage.html">About CIT</a></li>
-  
-        <!-- dropdown for interviews -->
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Interviews</a>
-          <div class="dropdown-content">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Interviews – GRIT Conference</title>
+  <link rel="icon" type="image/png" href="./Logo+Option+1..png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0b1020;--panel:#121a33;--panel-2:#0f1630;--text:#eaf0ff;--muted:#c3cbea;--primary:#5aa7ff;--primary-2:#3f8bff;--accent:#7bffc0;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%, rgba(90,167,255,.12), transparent),radial-gradient(1200px 600px at -10% 10%, rgba(123,255,192,.08), transparent),var(--bg);line-height:1.6}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{color:var(--primary-2)}
+    .container{width:min(1100px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:40;background:rgba(11,16,32,.7);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.2)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-weight:500;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover,.nav-links a:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .dropdown{position:relative}
+    .dropdown>button{background:transparent;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px;display:inline-flex;align-items:center;gap:6px}
+    .dropdown>button:hover,.dropdown>button:focus{background:rgba(255,255,255,.06);color:var(--text);outline:none}
+    .menu{position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px;box-shadow:var(--shadow);display:none}
+    .menu a{display:block;padding:10px 12px;border-radius:8px;color:var(--muted)}
+    .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .dropdown:focus-within .menu,.dropdown:hover .menu{display:block}
+    .hero{padding:48px 0 20px;border-bottom:1px solid rgba(255,255,255,.08);background:radial-gradient(800px 300px at 20% 0%, rgba(90,167,255,.10), transparent)}
+    .hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 10px}
+    .hero p{margin:0;color:var(--muted)}
+    .section{padding:28px 0}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .videos{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:980px){.videos{grid-template-columns:1fr}}
+    .video{background:var(--panel-2);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .video-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .title{font-weight:600}
+    .video-embed{position:relative;width:100%;aspect-ratio:16/9}
+    .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;color:var(--text);font-weight:600;cursor:pointer}
+    .btn:hover{background:rgba(255,255,255,.06)}
+    footer{margin-top:40px;padding:28px 0 44px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">GRIT Conference</div>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./citpage.html">About CIT</a>
+        <div class="dropdown">
+          <button>Interviews ▾</button>
+          <div class="menu">
             <a href="./Interviews_Guest.html">Guest Interviews</a>
             <a href="./Interviews_Students.html">Student Interviews</a>
           </div>
-        </li>
-        <!-- Volunteer/donate -->
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">volunteer</a>
-        <div class="dropdown-content">
-          <a href="./volunteer.html">volunteer</a>
-          <a href="./volunteer.html">donate</a>
         </div>
-      </li>
-        <!-- dropdown for Media -->
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Media</a>
-          <div class="dropdown-content">
+        <div class="dropdown">
+          <button>Get Involved ▾</button>
+          <div class="menu">
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./volunteer.html">Donate</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>Media ▾</button>
+          <div class="menu">
             <a href="./iPhotos.html">Photos</a>
             <a href="./iVideos.html">Videos</a>
           </div>
-        </li>
-
-        <!-- a drop down for the featured guests -->
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Featured</a>
-          <div class="dropdown-content">
+        </div>
+        <div class="dropdown">
+          <button>Featured ▾</button>
+          <div class="menu">
             <a href="./featuredcolleges.html">Colleges</a>
             <a href="./featuredspeakers.html">Speakers</a>
             <a href="./featuredsponsor.html">Sponsors</a>
           </div>
-        </li>
-  
-        <!-- Dropdown with registration links -->
-        <!-- <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Registration</a>
-          <div class="dropdown-content">
-            <a href="https://forms.gle/qLJaKHhzVPaXjfhRA" target="_blank">College Registration</a>
-            <a href="https://forms.gle/uxxty1npJLrFctLJ9" target="_blank">Student Registration</a>
-            <a href="https://forms.gle/RBKTe2yucbAcHcZn7" target="_blank">Volunteer Registration</a>
-            <a href="https://forms.gle/UnEQ94Ep12wDHKYr8" target="_blank">Speakers, Sponsors, Vendors Registration</a>
-          </div>
-        </li> -->
-  
-        <li class="nav_item"><a href="iContactUs.html">Contact Us</a></li>
-  
-        <li class="nav_image"><a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank"><img src="./citlogo.png" alt="CIT Logo" class="CITlogo"></a></li>
-      </ul>
-    </header>
-  
-    <!-- Student Interviews Section -->
-    <section class="featuredhead">
-      <h3 id="FSpeaktitle">Student Interviews</h3>
-      <!--<h1 class="comingsoon">Coming Soon!</h1>-->
+        </div>
+        <a href="./iContactUs.html">Contact</a>
+        <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" target="_blank">CIT</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Student Interviews</h1>
+      <p>Hear from students across all grade levels about their experiences in CIT.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container videos">
+        <div class="video"><div class="video-head"><div class="title">Amira Iqbal – 9th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=7J7pwSwBRVI" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/7J7pwSwBRVI" title="Amira Iqbal"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Bhavika Suryawanshi – 9th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=bZcvchz3C6E" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/bZcvchz3C6E" title="Bhavika Suryawanshi"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Abhi Somala – 10th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=Z93jPqJCZS4" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/Z93jPqJCZS4" title="Abhi Somala"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Natalie Wooden – 10th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=itot8Cj9wCE" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/itot8Cj9wCE" title="Natalie Wooden"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Simran Chavan – 11th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=A9HbFCr7b4Q" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/A9HbFCr7b4Q" title="Simran Chavan"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Ryan Copeland – 11th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=HjmWdXCojTs" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/HjmWdXCojTs" title="Ryan Copeland"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Kera Parham – 11th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=27X6G48A8FM" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/27X6G48A8FM" title="Kera Parham"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Maya Rollings – 12th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=MjR8G-s5l0g" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/MjR8G-s5l0g" title="Maya Rollings"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Brendan Malaugh – 12th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=hKGGXUxS6L4" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/hKGGXUxS6L4" title="Brendan Malaugh"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Margaret O'Leary – 12th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=01sWA4KFsA4" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/01sWA4KFsA4" title="Margaret O'Leary"></iframe></div></div>
+        <div class="video"><div class="video-head"><div class="title">Crystal McEnhimer – 12th Grade</div><a class="btn" href="https://www.youtube.com/watch?v=jNb7w0g1FI0" target="_blank">Watch on YouTube</a></div><div class="video-embed"><iframe src="https://www.youtube.com/embed/jNb7w0g1FI0" title="Crystal McEnhimer"></iframe></div></div>
+      </div>
     </section>
-    
-    <div id=topspeaker>
-      <div id="toprow" >
-        <!-- Video 1 - Amira Iqbal -->
-        <h3 id="centertext" style="margin-top: 50px;">Amira Iqbal -  9th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/7J7pwSwBRVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <br>
-      <br>
-      <div id="topcolum">
-        <!-- Video 2 - Bhavika Suryawanshi -->
-        <h3 id="centertext" style="margin-top: 50px;">Bhavika Suryawanshi - 9th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/bZcvchz3C6E?si=WxzwU6AzvRAG9m1C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div id="speakerbox">
-      <!-- Video 3 - Abhi Somala -->
-      <div id="column1">
-        <h3 id="centertext">Abhi Somala - 10th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z93jPqJCZS4?si=hW_oxiO609tdXN6H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br>
-        <br>
-        <!-- Video 4 - Simran Chavan -->
-        <h3 id="centertext">Simran Chavan - 11th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/A9HbFCr7b4Q?si=vP1JPHT-zeo2rn5F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br>
-        <br>
-        <h3 id="centertext">Kera Parham - 11th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/27X6G48A8FM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br>
-        <h3 id="centertext">Maya Rollings - 12th Grade</h3> <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/MjR8G-s5l0g?si=9vSKMCvY7B8CtpKa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br>
-        <br>
-        <h3 id="centertext">Brendan Malaugh - 12th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/hKGGXUxS6L4?si=X-QzrKD6Ly92k5t7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <br>
-      <br>
-      <div id="column2">
-        <!-- Video 5 - Natalie Wooden -->
-        <h3 id="centertext">Natalie Wooden - 10th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/itot8Cj9wCE?si=YeI170Wa9_j2kvdX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br>
-        <br>
-        <!-- Video 6 - Ryan Copeland uy-->
-        <h3 id="centertext">Ryan Copeland - 11th Grade </h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HjmWdXCojTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br>
-        <br>
-        <h3 id="centertext">Margaret O'Leary - 12th grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/01sWA4KFsA4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <br>
-        <br>
-        <h3 id="centertext">Crystal McEnhimer - 12th Grade</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/jNb7w0g1FI0?si=gyNN8gsdwz6G36nm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-    <!-- Add more videos and names as needed -->
-    
-    <br>
-    <br>
-    
-    <!-- Footer -->
-    <div>
-      <footer class="footer">
-        <a href="https://teachers.henrico.k12.va.us/deeprun/cit/" id="citweb" target="_blank">CIT Website</a> ||
-        <a href="https://deeprun.henricoschools.us/" id="deepweb" target="_blank">Deep Run's Website</a>
-        <p>4801 Twin Hickory Road
-          Glen Allen, Virginia 23059</p>
-        <p> Authors: Kera P., Anooshka P., Grace L., Yomna A.</p>
-        <br>
-      </footer>
-    </div>
-  </body>
+  </main>
 
+  <footer>
+    <div>© <span id="year"></span> GRIT Conference · Authors: Kera P., Anooshka P., Grace L., Yomna A.</div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
-
