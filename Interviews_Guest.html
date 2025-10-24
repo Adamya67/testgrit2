@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>Colleges – GRIT Conference 2023</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guest Interviews – GRIT Conference</title>
   <link rel="icon" type="image/png" href="./Logo+Option+1..png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{--bg:#0b1020;--panel:#121a33;--panel-2:#0f1630;--text:#eaf0ff;--muted:#c3cbea;--primary:#5aa7ff;--primary-2:#3f8bff;--accent:#7bffc0;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px}
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%, rgba(90,167,255,.12), transparent),radial-gradient(1200px 600px at -10% 10%, rgba(123,255,192,.08), transparent),var(--bg);line-height:1.6}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(90,167,255,.12), transparent),
+      radial-gradient(1200px 600px at -10% 10%, rgba(123,255,192,.08), transparent),
+      var(--bg);line-height:1.6}
     a{color:var(--primary);text-decoration:none}
     a:hover{color:var(--primary-2)}
-    .container{width:min(1100px,92vw);margin:0 auto}
+    img{max-width:100%;height:auto;display:block}
+    .container{width:min(1200px,92vw);margin:0 auto}
     header{position:sticky;top:0;z-index:40;background:rgba(11,16,32,.7);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.2)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{font-weight:700;letter-spacing:.3px}
@@ -28,20 +32,22 @@
     .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
     .dropdown:focus-within .menu,.dropdown:hover .menu{display:block}
     .hero{padding:48px 0 20px;border-bottom:1px solid rgba(255,255,255,.08);background:radial-gradient(800px 300px at 20% 0%, rgba(90,167,255,.10), transparent)}
-    .hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 10px}
+    .hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 6px}
     .hero p{margin:0;color:var(--muted)}
     .section{padding:28px 0}
-    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .videos{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width:980px){.videos{grid-template-columns:1fr}}
-    .video{background:var(--panel-2);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
-    .video-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
-    .title{font-weight:600}
-    .video-embed{position:relative;width:100%;aspect-ratio:16/9}
-    .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;color:var(--text);font-weight:600;cursor:pointer}
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+    .card .media{background:var(--panel-2);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+    .card .media img{width:100%;height:100%;object-fit:cover}
+    .card .body{padding:16px}
+    .card h3{margin:0 0 10px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:transparent;color:var(--text);font-weight:600;cursor:pointer}
     .btn:hover{background:rgba(255,255,255,.06)}
     footer{margin-top:40px;padding:28px 0 44px;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);text-align:center}
+    .note{color:var(--muted);text-align:center;margin-top:6px}
   </style>
 </head>
 <body>
@@ -54,8 +60,8 @@
         <div class="dropdown">
           <button>Interviews ▾</button>
           <div class="menu">
-            <a href="./Interviews_Guest.html">Guest Interviews</a>
-            <a href="./Interviews_Students.html">Student Interviews</a>
+            <a href="./Interviews_Guest.html">Guest Interviews from 2023</a>
+            <a href="./Interviews_Students.html">Student Interviews from 2023</a>
           </div>
         </div>
         <div class="dropdown">
@@ -68,16 +74,16 @@
         <div class="dropdown">
           <button>Media ▾</button>
           <div class="menu">
-            <a href="./iPhotos.html">Photos</a>
-            <a href="./iVideos.html">Videos</a>
+            <a href="./iPhotos.html">Photos from 2023</a>
+            <a href="./iVideos.html">Videos from 2023</a>
           </div>
         </div>
         <div class="dropdown">
           <button>Featured ▾</button>
           <div class="menu">
-            <a href="./featuredcolleges.html">Colleges</a>
-            <a href="./featuredspeakers.html">Speakers</a>
-            <a href="./featuredsponsor.html">Sponsors</a>
+            <a href="./featuredcolleges.html">Colleges from 2023</a>
+            <a href="./featuredspeakers.html">Speakers from 2023</a>
+            <a href="./featuredsponsor.html">Sponsors from 2023</a>
           </div>
         </div>
         <a href="./iContactUs.html">Contact</a>
@@ -89,7 +95,7 @@
   <section class="hero">
     <div class="container">
       <h1>Guest Interviews</h1>
-      <p>Conversations with keynote speakers, alumni, and community leaders.</p>
+      <p>Conversations with keynote speakers, alumni, and community leaders from the 2023 conference.</p>
     </div>
   </section>
 
@@ -121,7 +127,7 @@
   </main>
 
   <footer>
-    <div>© <span id="year"></span> GRIT Conference · Authors: Kera P., Anooshka P., Grace L., Yomna A.</div>
+    <div>© <span id="year"></span> GRIT Conference · Authors: Viraj K, Adamya S, Blaise B, Safwan S.</div>
   </footer>
 
   <script>
@@ -129,4 +135,5 @@
   </script>
 </body>
 </html>
+
 
